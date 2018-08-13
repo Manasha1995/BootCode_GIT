@@ -13,7 +13,7 @@ app.get("/", function(req,res){
 });
 
 //POST method
-app.post("/users", function(req,res){
+app.post("/user", function(req,res){
     res.send("my first name is : "+ JSON.stringify(req.body.fname)+" "+ JSON.stringify(req.body.lname));
 });
 
