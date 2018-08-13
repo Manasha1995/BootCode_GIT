@@ -1,4 +1,4 @@
 # BootCode_GIT
 
-##npm install express --save
-##npm install body-parser --save
+1. npm install express --save
+2. npm install body-parser --save
