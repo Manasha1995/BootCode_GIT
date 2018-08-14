@@ -1,0 +1,41 @@
+<h1>
+    Student table
+</h1>
+
+<table border="5px">
+    <tr>
+        <th>IndexNo</th>
+        <th>Fname</th>
+        <th>Lname</th>
+        <th>Tel</th>
+        <th>Delete</th>
+    </tr>
+    <tbody>
+        {{#each result}}
+            <tr>
+                <td>{{this.IndexNo}}</td>  
+                <td>{{this.Fname}}</td> 
+                <td>{{this.Lname}}</td>
+                <td>{{this.Tel}}</td>
+                <td><button class='btn'>Delete</button></td>
+            </tr>
+        {{/each}}
+    </tbody>
+
+    
+</table>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    $('.btn').click(function(){
+        var ino = $(this).parent().parent().children().first().html();
+        alert(ino);
+        $.ajax({
+            type:'post',
+            url:'/deleteuser',
+            data:{IndexNo:ino},
+            success:function(data){
+                   
+            }
+        }) 
+    });
+</script>
